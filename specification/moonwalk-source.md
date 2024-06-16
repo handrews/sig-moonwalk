@@ -39,6 +39,20 @@ This document is licensed under [The Apache License, Version 2.0](https://www.ap
 
 # Definitions
 
+## IRIs and URLs
+
+term                    | scheme        | fragment  | character set
+----------------------- | ------------- | ----------| -------------
+IRI                     | required      | allowed   | UTF-8
+IRI-reference           | allowed       | allowed   | UTF-8
+relative IRI-reference  | forbidden     | allowed   | UTF-8
+absolute-IRI            | required      | forbidden | UTF-8
+URI                     | required      | allowed   | US-ASCII
+URI-reference           | allowed       | allowed   | US-ASCII
+relative URI-reference  | forbidden     | allowed   | US-ASCII
+absolute-URI            | required      | forbidden | US-ASCII
+
+
 ## OpenAPI Description
 
 A document or set of documents that:
