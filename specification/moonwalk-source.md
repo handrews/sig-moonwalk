@@ -7,7 +7,7 @@ p#w3c-state { color: #629b34; }
 p#dt-published { color: #629b34; }
 a[href] { color: #45512c; }
 body:not(.toc-inline)
-#toc h2 { color: #45512c; }
+toc h2 { color: #45512c; }
 body:not(.toc-inline) #toc h2 { color: #45512c; }
 table { display: block; width: 100%; overflow: auto; }
 table th { font-weight: 600; }
@@ -18,7 +18,7 @@ pre { background-color: #f6f8fa !important; }
 </style> 
 <section class="introductory">
 
-## Current Status of Document
+# Current Status of Document
 
 This contents of this document have been gathered from a combination of the 3.1 specification and proposed changes for Moonwalk. <strong>None of the content in this document should be considered as product of consensus.</strong>  This is a working document for the purposes of getting the mechanics of publishing a document in place and beginning to discuss the overall structure of the document.
 </section>
@@ -35,176 +35,70 @@ This document is licensed under [The Apache License, Version 2.0](https://www.ap
 </section>
 
 
-## Introduction
+# Introduction
 
-## Definitions
+# Definitions
 
-##### OpenAPI Document
+## OpenAPI Description
 
-##### Media Types
+A document or set of documents that:
 
-##### HTTP Status Codes
+1. Are parsed and linked in accordance with [Parsing and Serializing Description Documents](#parsing-and-serializing-description-documents)
+2. Describe an API's shape, deployment, or both, based on the identified entry document
 
-## Conventions
+### Entry Document
 
-### Versions {#oas-version}
+The document within an OpenAPI Description where parsing begins.
 
-### Format
+### OpenAPI Shape Description
 
-### Data Types
+An OpenAPI description that 
+# Specification
 
+## API Description Documents
 
-#### Working With Binary Data
+### The API Description Model
 
+This defines an in-memory representation of the graph resulting from parsing an OpenAPI Description.
+This data structure is to be defined in a way that is portable across programming languages and environments.
+The structure is a graph to ensure that internal linkages are retained and handled consistently, rather than being elided in an attempt to force descriptions to behave like trees.
 
-##### Migrating binary descriptions from OAS 3.0
 
+### Parsing and Serializing Description Documents
 
-### Rich Text Formatting
+### Resolving Description Document URIs
 
-### Relative References in URIs
+#### Input
 
+## Working with Data
 
-### Relative References in URLs
+This section specifies how to model data syntax and semantics.
+It covers abstract data modeling, as well as parsing and serialization based on media types or grammars, and projecting into domains such as code (SDKs) or interfaces (web forms).
 
+## API Shapes
 
-### Referencing Imports
+Dependencies: [Working with Data](#working-with-data), 
 
-#### Using Imported Names
+This section describes the shape of the API by modeling the HTTP operations.
+It models HTTP messages in the same way that API data is modeled, and builds on that to describe the relationships among HTTP messages that produce its interaction semantics.
+Relationships include correlating responses to requests, grouping operations by resource, and grouping related resources such as collections and items.
+Signature definition and matching is also described here.
 
+## API Deployment
 
-#### Referencing a Complete Document
+### API Discoverability
 
+### API Security
 
-#### Locating and Loading Imported Resources
+## API Documentation
 
+## Specification Extensions
 
-#### Security Considerations for URL Retrieval
-
-
-
-### Specification Extensions
-
-
-## Document Processing
-
-#### Parsing Documents
-
-
-#### Structural Interoperability
-
-
-#### Resolving Implicit Connections
-
-
-#### Undefined and Implementation-Defined Behavior
-
-
-
-## OpenAPI Document Structure
-
-
-##### General Fixed Fields
-
-
-#### Info Object
-
-
-##### Fixed Fields {#info-object-fixed-fields}
-
-
-##### Info Object Example
-
-
-#### Contact Object
-
-
-##### Fixed Fields
-
-
-##### Contact Object Example
-
-
-#### License Object
-
-
-##### Fixed Fields
-
-
-##### License Object Example
-
-
-#### Components Object
-
-
-#### Import Object
-
-##### Fixed Fields
-
-
-
-### API Shape
-
-
-##### Shape Fixed Fields
-
-
-#### Operation Object
-
-
-##### Fixed Fields
-
-
-##### Operation Object Example
-
-
-
-### API Deployment
-
-
-##### Deployment Fixed Fields
-
-
-##### Deployment Example
-
-
-#### Deployment Object
-
-##### Deployment Fixed Fields
-
-
-#### Security Scheme Object
-
-
-##### Fixed Fields
-
-#### Credential Object
-
-
-##### Field Fields
-
-
-#### Security Config Object
-
-##### ApiKey Config Object
-
-
-##### OAuth2 Config Object
-
-
- ##### OIDC Config Object
-
-
- ##### HTTP Config Object
-
-
-
-
-## Appendix
+# Security Considerations
 
 <section class="appendix">
 
-## Revision History
+# Revision History
 
 Version   | Date       | Notes
 ---       | ---        | ---
